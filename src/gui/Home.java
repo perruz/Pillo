@@ -93,16 +93,11 @@ public class Home {
 		pnlHome = new JPanel();
 		pnlPres = new JPanel();
 		pnlPres.setBackground(Color.WHITE);
-		
-		
-					
-					
-					
-				pnlPres.setVisible(false);
-				pnlHelp = new JPanel();
-				pnlHelp.setBackground(Color.WHITE);
+							
+		pnlPres.setVisible(false);
+		pnlHelp = new JPanel();
+		pnlHelp.setBackground(Color.WHITE);
 				
-					
 		pnlHelp.setVisible(false);
 		
 		
@@ -160,6 +155,12 @@ public class Home {
 			frame.getContentPane().add(pnlHome);
 			pnlHome.setLayout(null);
 			JButton btnHomeAssorelative = new JButton("ASSOCIA FAMIGLIARE");
+			btnHomeAssorelative.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					AlarmTimeWindow window = new AlarmTimeWindow();
+					window.setVisible(true);
+				}
+			});
 			btnHomeAssorelative.setSelectedIcon(null);
 			btnHomeAssorelative.setBackground(new Color(65, 105, 225));
 			btnHomeAssorelative.setForeground(Color.WHITE);
@@ -172,6 +173,7 @@ public class Home {
 			btnHomeViewpres.setBounds(0, 146, 304, 37);
 			btnHomeViewpres.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
+
 				}
 			});
 			btnHomeViewpres.addMouseListener(new MouseAdapter() {
