@@ -83,6 +83,13 @@ public class Home {
 		frame.setBounds(0, 0, 1000, 550);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		
+		try {
+		    UIManager.setLookAndFeel( UIManager.getCrossPlatformLookAndFeelClassName() );
+		 } catch (Exception e) {
+		            e.printStackTrace();
+		 }
+		
 	/**
 	 * Initialize all the panel objs.
 	 */
@@ -116,7 +123,7 @@ public class Home {
 			JButton btnHomeHelp = new JButton("AIUTO");
 			btnHomeHelp.setForeground(Color.BLACK);
 			btnHomeHelp.setBackground(Color.GREEN);
-			btnHomeHelp.setBounds(0, 96, 304, 37);
+			btnHomeHelp.setBounds(0, 96, 300, 300);
 			btnHomeHelp.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 					}
@@ -130,6 +137,8 @@ public class Home {
 				});
 			btnHomeHelp.setFont(new Font("Lucida Grande", Font.PLAIN, 21));
 			pnlHome.add(btnHomeHelp);
+
+			
 			
 			JButton btnHomeViewpres = new JButton("VEDI PRESCRIZIONE");
 			btnHomeViewpres.setForeground(Color.BLACK);
