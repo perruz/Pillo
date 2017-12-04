@@ -80,7 +80,7 @@ public class Home {
 		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(UIManager.getColor("Desktop.background"));
-		frame.setBounds(100, 100, 1000, 599);
+		frame.setBounds(0, 0, 1000, 550);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 	/**
@@ -90,33 +90,92 @@ public class Home {
 		JPanel pnlHome;
 		JPanel pnlPres;
 		JPanel pnlHelp;
+		
 		pnlHome = new JPanel();
+			pnlHome.setBackground(Color.WHITE);
+			pnlHome.setForeground(Color.WHITE);
+			pnlHome.setBounds(0, 0, 1000, 550);
+			frame.getContentPane().add(pnlHome);
+		
+		
 		pnlPres = new JPanel();
-		pnlPres.setBackground(Color.WHITE);
-							
-		pnlPres.setVisible(false);
+			pnlPres.setBackground(Color.WHITE);
+			pnlPres.setVisible(false);
+		
 		pnlHelp = new JPanel();
-		pnlHelp.setBackground(Color.WHITE);
+			pnlHelp.setBackground(Color.WHITE);
+			pnlHelp.setVisible(false);
+			pnlHelp.setBounds(0, 0, 1000, 550);
+			pnlHelp.setLayout(null);
+
+			frame.getContentPane().add(pnlHelp);
+			
+			
+			
+			
+			JButton btnHomeHelp = new JButton("AIUTO");
+			btnHomeHelp.setForeground(Color.BLACK);
+			btnHomeHelp.setBackground(Color.GREEN);
+			btnHomeHelp.setBounds(0, 96, 304, 37);
+			btnHomeHelp.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+					}
+				});
+			btnHomeHelp.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mouseClicked(MouseEvent e) {
+						pnlHome.setVisible(false);
+						pnlHelp.setVisible(true);
+					}
+				});
+			btnHomeHelp.setFont(new Font("Lucida Grande", Font.PLAIN, 21));
+			pnlHome.add(btnHomeHelp);
+			
+			JButton btnHomeViewpres = new JButton("VEDI PRESCRIZIONE");
+			btnHomeViewpres.setForeground(Color.BLACK);
+			btnHomeViewpres.setBackground(Color.blue);
+			btnHomeViewpres.setBounds(0, 146, 304, 37);
+			btnHomeViewpres.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+					}
+				});
+			btnHomeViewpres.addMouseListener(new MouseAdapter() {
+					@Override
+			public void mouseClicked(MouseEvent e) {
+						pnlHome.setVisible(false);
+						pnlPres.setVisible(true);
+					}
+				});
 				
-		pnlHelp.setVisible(false);
-		
-		
-		
-		
-		pnlHelp.setBounds(0, 0, 982, 550);
-		frame.getContentPane().add(pnlHelp);
-		
+			btnHomeViewpres.setFont(new Font("Lucida Grande", Font.PLAIN, 21));
+			pnlHome.add(btnHomeViewpres);
+			
+			
+			JButton btnHomeAssorelative = new JButton("ASSOCIA FAMIGLIARE");
+			btnHomeAssorelative.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						AlarmTimeWindow window = new AlarmTimeWindow();
+						window.setVisible(true);
+					}
+				});
+			btnHomeAssorelative.setSelectedIcon(null);
+			btnHomeAssorelative.setBackground(Color.BLUE);
+			btnHomeAssorelative.setForeground(Color.BLACK);
+			btnHomeAssorelative.setBounds(0, 196, 304, 39);
+			btnHomeAssorelative.setFont(new Font("Lucida Grande", Font.PLAIN, 21));
+			pnlHome.add(btnHomeAssorelative);
+			
+						
 
-
-		JButton btnHelpRtnhome = new JButton("INDIETRO");
+JButton btnHelpRtnhome = new JButton("INDIETRO");
 		btnHelpRtnhome.setBounds(0, 130, 320, 37);
 		btnHelpRtnhome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		pnlHelp.setLayout(null);
-		btnHelpRtnhome.setBackground(new Color(65, 105, 225));
+		btnHelpRtnhome.setBackground(Color.BLUE);
 		btnHelpRtnhome.setForeground(Color.WHITE);
+		
 		pnlHelp.add(btnHelpRtnhome);
 		btnHelpRtnhome.addMouseListener(new MouseAdapter() {
 			@Override
@@ -131,9 +190,9 @@ public class Home {
 				pnlPres.setLayout(null);
 				
 
-				JButton btnPresRtnhome = new JButton("INDIETRO");
+JButton btnPresRtnhome = new JButton("INDIETRO");
 				btnPresRtnhome.setBounds(0, 130, 318, 37);
-				btnPresRtnhome.setBackground(new Color(65, 105, 225));
+				btnPresRtnhome.setBackground(Color.BLUE);
 				btnPresRtnhome.setForeground(Color.WHITE);
 				pnlPres.add(btnPresRtnhome);
 				btnPresRtnhome.addMouseListener(new MouseAdapter() {
@@ -153,71 +212,23 @@ public class Home {
 			
 			pnlHome.setBounds(0, 0, 1000, 550);
 			frame.getContentPane().add(pnlHome);
+			
+			
 			pnlHome.setLayout(null);
-			JButton btnHomeAssorelative = new JButton("ASSOCIA FAMIGLIARE");
-			btnHomeAssorelative.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					AlarmTimeWindow window = new AlarmTimeWindow();
-					window.setVisible(true);
-				}
-			});
-			btnHomeAssorelative.setSelectedIcon(null);
-			btnHomeAssorelative.setBackground(new Color(65, 105, 225));
-			btnHomeAssorelative.setForeground(Color.WHITE);
-			btnHomeAssorelative.setBounds(0, 196, 304, 39);
-			btnHomeAssorelative.setFont(new Font("Lucida Grande", Font.PLAIN, 21));
-			pnlHome.add(btnHomeAssorelative);
-			JButton btnHomeViewpres = new JButton("VEDI PRESCRIZIONE");
-			btnHomeViewpres.setForeground(Color.WHITE);
-			btnHomeViewpres.setBackground(new Color(65, 105, 225));
-			btnHomeViewpres.setBounds(0, 146, 304, 37);
-			btnHomeViewpres.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent arg0) {
-
-				}
-			});
-			btnHomeViewpres.addMouseListener(new MouseAdapter() {
-				@Override
-				public void mouseClicked(MouseEvent e) {
-					pnlHome.setVisible(false);
-					pnlPres.setVisible(true);
-				}
-			});
 			
-			btnHomeViewpres.setFont(new Font("Lucida Grande", Font.PLAIN, 21));
-			pnlHome.add(btnHomeViewpres);
-			JButton btnHomeHelp = new JButton("AIUTO");
-			btnHomeHelp.setForeground(Color.WHITE);
-			btnHomeHelp.setBackground(new Color(65, 105, 225));
-			btnHomeHelp.setBounds(0, 96, 304, 37);
-			btnHomeHelp.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-				}
-			});
-			btnHomeHelp.addMouseListener(new MouseAdapter() {
-				@Override
-				public void mouseClicked(MouseEvent e) {
-					pnlHome.setVisible(false);
-					pnlHelp.setVisible(true);
-				}
-			});
-			btnHomeHelp.setFont(new Font("Lucida Grande", Font.PLAIN, 21));
-			pnlHome.add(btnHomeHelp);
+						
 			
-
 			BufferedImage myPicture = null;
-			try {
-				myPicture = ImageIO.read(new File("img/LifeboxLogo.png"));
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-			JLabel homepanel = new JLabel((new ImageIcon(myPicture)));
-			homepanel.setBounds(447, 36, 355, 426);
-			pnlHome.add(homepanel);
-
-	
-
+					try {
+						myPicture = ImageIO.read(new File("img/LifeboxLogo.png"));
+						} catch (IOException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+						JLabel homepanel = new JLabel((new ImageIcon(myPicture)));
+						homepanel.setBounds(447, 36, 355, 426);
+						pnlHome.add(homepanel);
+			
 	}
 }
 	 /**
