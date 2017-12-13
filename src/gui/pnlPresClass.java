@@ -2,6 +2,7 @@ package gui;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
@@ -20,6 +21,26 @@ public class pnlPresClass extends JPanel {
 
 	public pnlPresClass() {
 		initUI();
+	}
+	
+	private class JLabelResize extends JLabel
+	{
+	    /**
+		 * 
+		 */
+		private static final long serialVersionUID = 7958902697982183627L;
+		ImageIcon imageIcon;
+	    public JLabelResize(ImageIcon icon)
+	    {
+	        super();
+	        this.imageIcon = icon;
+	    }
+	    @Override
+	    public void paintComponent(Graphics g)
+	    {
+	        super.paintComponent(g);
+	        g.drawImage(imageIcon.getImage(),0,0,getWidth(),getHeight(),this);
+	    }
 	}
 	
 	public final void initUI() {
@@ -105,8 +126,9 @@ public class pnlPresClass extends JPanel {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-			JLabel BalatonPanel = new JLabel((new ImageIcon(Balaton0830)));
+			JLabelResize BalatonPanel = new JLabelResize((new ImageIcon(Balaton0830)));
 				BalatonPanel.setBounds(222, 50, 373, 443);
+				BalatonPanel.repaint();
 				add(BalatonPanel);
 			
 			
