@@ -26,15 +26,13 @@ public class pnlHelpClass extends JPanel {
 		setLayout(null);
 		
 		JButton btnHelpRtnhome = new JButton("INDIETRO");
-		btnHelpRtnhome.setBounds(0, 130, 320, 37);
+		btnHelpRtnhome.setBounds(0, 80, 227, 37);
+		btnHelpRtnhome.setBackground(Color.BLUE);
+		btnHelpRtnhome.setForeground(Color.WHITE);
 		btnHelpRtnhome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnHelpRtnhome.setBackground(Color.BLUE);
-		btnHelpRtnhome.setForeground(Color.WHITE);
-		
-		add(btnHelpRtnhome);
 		btnHelpRtnhome.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -43,6 +41,15 @@ public class pnlHelpClass extends JPanel {
 				}
 		});
 		btnHelpRtnhome.setFont(new Font("Lucida Grande", Font.PLAIN, 21));
+		add(btnHelpRtnhome);
 		
+		JButton btnAlertFam = new JButton("FAMIGLIARE AVVISATO");
+		btnAlertFam.setBounds(230, 200, 400, 200);
+		btnAlertFam.setBackground(Color.GREEN);
+		btnAlertFam.setForeground(Color.WHITE);
+		btnAlertFam.setFont(new Font("Lucida Grande", Font.PLAIN, 32));
+		add(btnAlertFam);
+
+				
 	}
 }

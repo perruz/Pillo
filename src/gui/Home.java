@@ -1,5 +1,6 @@
 package gui;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -44,7 +45,7 @@ public class Home {
 		
 		
 		frame = new JFrame();
-		frame.getContentPane().setBackground(UIManager.getColor("Desktop.background"));
+		frame.getContentPane().setBackground(Color.BLACK);
 		frame.setBounds(0, 0, 800, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
