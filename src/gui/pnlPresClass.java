@@ -15,11 +15,15 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import classes.loadDatabase;
+
 public class pnlPresClass extends JPanel {
 
 	private static final long serialVersionUID = -5753507215249578083L;
-
-	public pnlPresClass() {
+	private loadDatabase databaseLocal;
+	
+	public pnlPresClass(loadDatabase database) {
+		databaseLocal=database;
 		initUI();
 	}
 	
@@ -67,7 +71,7 @@ public class pnlPresClass extends JPanel {
 		});
 		btnPresRtnhome.setFont(new Font("Lucida Grande", Font.PLAIN, 21));
 		
-		JButton btnPres1_1 = new JButton("08.30");
+		JButton btnPres1_1 = new JButton(databaseLocal.getPrescription(1).TimeHours+":"+databaseLocal.getPrescription(1).TimeMinute);
 		btnPres1_1.setBounds(0, 140, 227, 37);
 		btnPres1_1.setForeground(Color.WHITE);
 		btnPres1_1.setFont(new Font("Lucida Grande", Font.PLAIN, 21));
@@ -75,28 +79,28 @@ public class pnlPresClass extends JPanel {
 		add(btnPres1_1);
 		
 		
-		JButton btnPres1_2 = new JButton("12.30");
+		JButton btnPres1_2 = new JButton(databaseLocal.getPrescription(2).TimeHours+":"+databaseLocal.getPrescription(2).TimeMinute);
 		btnPres1_2.setForeground(Color.WHITE);
 		btnPres1_2.setFont(new Font("Lucida Grande", Font.PLAIN, 21));
 		btnPres1_2.setBackground(Color.BLUE);
 		btnPres1_2.setBounds(0, 140+distance, 227, 37);
 		add(btnPres1_2);
 		
-		JButton btnPres1_3 = new JButton("15.30");
+		JButton btnPres1_3 = new JButton(databaseLocal.getPrescription(3).TimeHours+":"+databaseLocal.getPrescription(3).TimeMinute);
 		btnPres1_3.setForeground(Color.WHITE);
 		btnPres1_3.setFont(new Font("Lucida Grande", Font.PLAIN, 21));
 		btnPres1_3.setBackground(Color.BLUE);
 		btnPres1_3.setBounds(0, 140+2*distance, 227, 37);
 		add(btnPres1_3);
 		
-		JButton btnPres1_4 = new JButton("17.30");
+		JButton btnPres1_4 = new JButton(databaseLocal.getPrescription(4).TimeHours+":"+databaseLocal.getPrescription(4).TimeMinute);
 		btnPres1_4.setForeground(Color.WHITE);
 		btnPres1_4.setFont(new Font("Lucida Grande", Font.PLAIN, 21));
 		btnPres1_4.setBackground(Color.BLUE);
 		btnPres1_4.setBounds(0, 140+3*distance, 227, 37);
 		add(btnPres1_4);
 		
-		JButton btnPres1_5 = new JButton("21.00");
+		JButton btnPres1_5 = new JButton(databaseLocal.getPrescription(5).TimeHours+":"+databaseLocal.getPrescription(5).TimeMinute);
 		btnPres1_5.setForeground(Color.WHITE);
 		btnPres1_5.setFont(new Font("Lucida Grande", Font.PLAIN, 21));
 		btnPres1_5.setBackground(Color.BLUE);

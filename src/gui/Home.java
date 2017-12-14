@@ -1,8 +1,9 @@
 package gui;
 
+
 import java.awt.Color;
 import java.awt.EventQueue;
-
+import classes.loadDatabase;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 
@@ -10,6 +11,7 @@ public class Home {
 
 	private JFrame frame;
 	private static Home window;
+	private static loadDatabase database;
 	
 	public static pnlHomeClass pnlHome;
 	public static pnlPresClass pnlPres;
@@ -22,6 +24,7 @@ public class Home {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					database = new loadDatabase();
 					window = new Home();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
@@ -58,7 +61,7 @@ public class Home {
 		
 	
 		pnlHome = new pnlHomeClass();
-		pnlPres = new pnlPresClass();
+		pnlPres = new pnlPresClass(database);
 		pnlHelp = new pnlHelpClass();
 		
 	    frame.getContentPane().add(pnlHome);
