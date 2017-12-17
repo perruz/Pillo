@@ -16,6 +16,9 @@ public class Home {
 	public static pnlHomeClass pnlHome;
 	public static pnlPresClass pnlPres;
 	public static pnlHelpClass pnlHelp;
+	public static pnlTakePillClass pnlTakePill;
+
+	
 	
 	/**
 	 * Launch the application.
@@ -49,7 +52,7 @@ public class Home {
 		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.BLACK);
-		frame.setBounds(0, 0, 800, 600);
+		frame.setBounds(0, 0, 800, 480);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -63,10 +66,13 @@ public class Home {
 		pnlHome = new pnlHomeClass();
 		pnlPres = new pnlPresClass(database);
 		pnlHelp = new pnlHelpClass();
+		pnlTakePill = new pnlTakePillClass();
 		
 	    frame.getContentPane().add(pnlHome);
 	    frame.getContentPane().add(pnlHelp);
 	    frame.getContentPane().add(pnlPres);
+	    frame.getContentPane().add(pnlTakePill);
+
 	    
 	    pnlHome.setVisible(true);
 		

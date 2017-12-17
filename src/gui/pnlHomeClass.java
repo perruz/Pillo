@@ -2,6 +2,7 @@ package gui;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -27,10 +28,30 @@ public class pnlHomeClass extends JPanel {
 	setVisible(false);
 	setBackground(Color.WHITE);
 	setForeground(Color.WHITE);
-	setBounds(0, 0, 800, 600);
+	setBounds(0, 0, 800, 480);
+	
+	
+	JButton btnHomeViewpres = new JButton("VEDI PRESCRIZIONE");
+	btnHomeViewpres.setForeground(Color.WHITE);
+	btnHomeViewpres.setBackground(Color.BLUE);
+	btnHomeViewpres.setBounds(10, 220, 263, 146);
+	btnHomeViewpres.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+	btnHomeViewpres.addMouseListener(new MouseAdapter() {
+			@Override
+	public void mouseClicked(MouseEvent e) {
+				setVisible(false);
+				Home.pnlPres.setVisible(true);
+			}
+		});
+	btnHomeViewpres.setFont(new Font("Lucida Grande", Font.PLAIN, 21));
+	add(btnHomeViewpres);
+	
 	
 	JButton btnHomeHelp = new JButton("AIUTO");
-	btnHomeHelp.setBounds(553, 176, 241, 174);
+	btnHomeHelp.setBounds(543, 220, 252, 146);
 	btnHomeHelp.setForeground(Color.WHITE);
 	btnHomeHelp.setBackground(new Color(220,20,60));
 	btnHomeHelp.addMouseListener(new MouseAdapter() {
@@ -72,8 +93,9 @@ public class pnlHomeClass extends JPanel {
 	add(btnHomeViewpres);
 	*/
 	
-	JButton btnHomeAlarmSetting = new JButton("IMPOSTA ORARIO");
-	btnHomeAlarmSetting.setBounds(336, 159, 255, 37);
+	/////////////////////////////////////////////////////////////////*Hidden Buttons start*/
+	
+	JButton btnHomeAlarmSetting = new JButton("O");
 	btnHomeAlarmSetting.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AlarmTimeWindow window = new AlarmTimeWindow();
@@ -83,27 +105,43 @@ public class pnlHomeClass extends JPanel {
 	btnHomeAlarmSetting.setSelectedIcon(null);
 	btnHomeAlarmSetting.setBackground(Color.BLUE);
 	btnHomeAlarmSetting.setForeground(Color.WHITE);
-	btnHomeAlarmSetting.setBounds(6, 362, 241, 85);
+	btnHomeAlarmSetting.setBounds(600, 420, 50, 52);
 	btnHomeAlarmSetting.setFont(new Font("Lucida Grande", Font.PLAIN, 21));
 	add(btnHomeAlarmSetting);
 	
-	JButton btnHomeViewpres = new JButton("VEDI PRESCRIZIONE");
-	btnHomeViewpres.setForeground(Color.WHITE);
-	btnHomeViewpres.setBackground(Color.BLUE);
-	btnHomeViewpres.setBounds(6, 176, 241, 174);
-	btnHomeViewpres.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-	btnHomeViewpres.addMouseListener(new MouseAdapter() {
-			@Override
-	public void mouseClicked(MouseEvent e) {
+	
+	JButton btnTakePill = new JButton("1");
+	btnTakePill.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Home.pnlTakePill.setVisible(true);
 				setVisible(false);
-				Home.pnlPres.setVisible(true);
 			}
 		});
-	btnHomeViewpres.setFont(new Font("Lucida Grande", Font.PLAIN, 21));
-	add(btnHomeViewpres);
+	btnTakePill.setSelectedIcon(null);
+	btnTakePill.setBackground(Color.BLUE);
+	btnTakePill.setForeground(Color.WHITE);
+	btnTakePill.setBounds(650, 420, 50, 52);
+	btnTakePill.setFont(new Font("Lucida Grande", Font.PLAIN, 21));
+	add(btnTakePill);
+	
+	JButton btnInsertPill = new JButton("2");
+	btnInsertPill.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AlarmTimeWindow window = new AlarmTimeWindow();
+				window.setVisible(true);
+			}
+		});
+	btnInsertPill.setSelectedIcon(null);
+	btnInsertPill.setBackground(Color.BLUE);
+	btnInsertPill.setForeground(Color.WHITE);
+	btnInsertPill.setBounds(700, 420, 50, 52);
+	btnInsertPill.setFont(new Font("Lucida Grande", Font.PLAIN, 21));
+	add(btnInsertPill);
+	
+	
+	/////////////////////////////////////////////////////////////////*Hidden Buttons end*/
+
+		
 			
 	
 	BufferedImage myPicture = null;
@@ -117,7 +155,6 @@ public class pnlHomeClass extends JPanel {
     homepanel.setBounds(222, 50, 373, 443);
 	add(homepanel);
 	homepanel.setVisible(true); 
-	add(homepanel);
 	
 	}
 }

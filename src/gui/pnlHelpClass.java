@@ -22,7 +22,7 @@ public class pnlHelpClass extends JPanel {
 	public final void initUI() {
 		setBackground(Color.WHITE);
 		setVisible(false);
-		setBounds(0, 0, 800, 600);
+		setBounds(0, 0, 800, 480);
 		setLayout(null);
 		
 		JButton btnHelpRtnhome = new JButton("INDIETRO");

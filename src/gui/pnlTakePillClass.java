@@ -18,7 +18,43 @@ public class pnlTakePillClass extends JPanel {
 
 	
 	private static final long serialVersionUID = -1258735571158003112L;
+	private int i=1;
+	private JButton btnPres1_1;
+	private JButton btnPres1_2;
+	private JButton btnPres1_3;
+	private JButton btnPres1_4;
+	private JButton btnPres1_5;
+	
+	 private void refresh() {
+			
+			
+			switch(i) {
+			 
+		    case 2:
+				btnPres1_1.setBackground(Color.BLUE);
+				btnPres1_2.setBackground(Color.GREEN);
+		        break;
+		 
+		    case 3:
+			    	btnPres1_2.setBackground(Color.BLUE);
+				btnPres1_3.setBackground(Color.GREEN);
+		        break;
+		     	 
+		    case 4: 
+			    	btnPres1_3.setBackground(Color.BLUE);
+				btnPres1_4.setBackground(Color.GREEN);
+		        break;
+		     
+		    case 5: 
+			    	btnPres1_4.setBackground(Color.BLUE);
+				btnPres1_5.setBackground(Color.GREEN);
+		        break;
+	        
+		    default:
+			}
 
+	}
+	
 	public pnlTakePillClass() {
 		initUI();
 	}
@@ -30,7 +66,7 @@ public class pnlTakePillClass extends JPanel {
 		
 		setBackground(Color.WHITE);
 		setVisible(false);
-		setBounds(0, 0, 800, 600);
+		setBounds(0, 0, 800, 480);
 		setLayout(null);
 		
 		BufferedImage AlarmTriangleTakePill = null;
@@ -45,27 +81,36 @@ public class pnlTakePillClass extends JPanel {
 		add(AlarmPanel);
 		
 		
+		JButton btnTimeToGetPill = new JButton("E' ORA DI PRENDERE LE PILLOLE DELLE 08.30");
+		btnTimeToGetPill.setBounds(66, 174, 630, 53);
+		add(btnTimeToGetPill);
+		btnTimeToGetPill.setBackground(Color.RED);
+		btnTimeToGetPill.setForeground(Color.WHITE);
+		btnTimeToGetPill.setFont(new Font("Lucida Grande", Font.PLAIN, 21));
+
+		
+		
+		
 		
 		JButton btnTakePill = new JButton("PRONTO");
-		btnTakePill.setBounds(0, 80, 227, 37);
+		btnTakePill.setBounds(260, 254, 252, 53);
 		add(btnTakePill);
 		btnTakePill.setBackground(Color.BLUE);
 		btnTakePill.setForeground(Color.WHITE);
 		btnTakePill.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				setVisible(false);
-				
-				}
+				initUI2();
+			}
 		});
 		btnTakePill.setFont(new Font("Lucida Grande", Font.PLAIN, 21));
-		
+	}
 		
 		
 		///////////////////////////////* First panel of "take pill"(08.30 green)*/
+		private void initUI2() {
 		
 		int distance = 120;
-		
 		
 		
 		JButton btnPres1_1 = new JButton("08.30");
@@ -112,46 +157,16 @@ public class pnlTakePillClass extends JPanel {
 		btnGO.setBackground(Color.BLUE);
 		btnGO.setBounds(0+3*distance, 563, 120, 37);
 		add(btnGO);
-		int i=1;
+		
 		btnGO.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				i=i+1;
+				refresh();
 				}
 		});
+		}
+	
 		
-		
-
-		switch(i) {
-		 
-	    case i=2:
-			btnPres1_1.setBackground(Color.BLUE);
-			btnPres1_2.setBackground(Color.GREEN);
-	        break;
-	 
-	    case i=3:
-		    	btnPres1_2.setBackground(Color.BLUE);
-			btnPres1_3.setBackground(Color.GREEN);
-	        break;
-	     	 
-	    case i=4: 
-		    	btnPres1_3.setBackground(Color.BLUE);
-			btnPres1_4.setBackground(Color.GREEN);
-	        break;
-	     
-	    case i=4: 
-		    	btnPres1_4.setBackground(Color.BLUE);
-			btnPres1_5.setBackground(Color.GREEN);
-	        break;
-        
-	    default:
 	}
-		
-		
-		
-		
-		
-		
 
-	}
-}

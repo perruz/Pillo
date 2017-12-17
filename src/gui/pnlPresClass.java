@@ -33,6 +33,7 @@ public class pnlPresClass extends JPanel {
 		 * 
 		 */
 		private static final long serialVersionUID = 7958902697982183627L;
+		
 		ImageIcon imageIcon;
 	    public JLabelResize(ImageIcon icon)
 	    {
@@ -50,7 +51,7 @@ public class pnlPresClass extends JPanel {
 	public final void initUI() {
 		setBackground(Color.WHITE);
 		setVisible(false);
-		setBounds(0, 0, 800, 600);
+		setBounds(0, 0, 800, 480);
 		setLayout(null);
 		
 		/* First panel of "vedi prescrizione"(08.30 green)*/
