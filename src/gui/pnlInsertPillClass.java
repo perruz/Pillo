@@ -14,13 +14,51 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class pnlTakePillClass extends JPanel {
+public class pnlInsertPillClass extends JPanel {
+
+
+	private static final long serialVersionUID = -4610797458734508339L;
+	
+	private JButton btnPres1_1;
+	private JButton btnPres1_2;
+	private JButton btnPres1_3;
+	private JButton btnPres1_4;
+	private JButton btnPres1_5;
+	private int i=1;
 
 	
-	private static final long serialVersionUID = -1258735571158003112L;
 	
+	 private void refresh() {
+			
+			
+			switch(i) {
+			 
+		    case 2:
+				btnPres1_1.setBackground(Color.BLUE);
+				btnPres1_2.setBackground(Color.GREEN);
+		        break;
+		 
+		    case 3:
+			    	btnPres1_2.setBackground(Color.BLUE);
+				btnPres1_3.setBackground(Color.GREEN);
+		        break;
+		     	 
+		    case 4: 
+			    	btnPres1_3.setBackground(Color.BLUE);
+				btnPres1_4.setBackground(Color.GREEN);
+		        break;
+		     
+		    case 5: 
+			    	btnPres1_4.setBackground(Color.BLUE);
+				btnPres1_5.setBackground(Color.GREEN);
+		        break;
+	        
+		    default:
+			}
+
+	}
 	
-	public pnlTakePillClass() {
+	public pnlInsertPillClass() {
 		initUI();
 	}
 	
@@ -34,56 +72,58 @@ public class pnlTakePillClass extends JPanel {
 		setBounds(0, 0, 800, 480);
 		setLayout(null);
 		
-		BufferedImage AlarmTriangleTakePill = null;
+		BufferedImage ALarmLoadingPill = null;
 		try {
-			AlarmTriangleTakePill = ImageIO.read(new File("img/Warning-triangle.png"));
+			ALarmLoadingPill = ImageIO.read(new File("img/loading.png"));
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-		JLabel AlarmPanel = new JLabel((new ImageIcon(AlarmTriangleTakePill)));
-		AlarmPanel.setBounds(222, 50, 373, 443);
+		JLabel AlarmPanel = new JLabel((new ImageIcon(ALarmLoadingPill)));
+		AlarmPanel.setBounds(232, 92, 314, 58);
 		add(AlarmPanel);
 		
 		
-		JButton btnTimeToGetPill = new JButton("E' ORA DI PRENDERE LE PILLOLE DELLE 08.30");
-		btnTimeToGetPill.setBounds(66, 174, 630, 53);
-		add(btnTimeToGetPill);
-		btnTimeToGetPill.setBackground(Color.RED);
-		btnTimeToGetPill.setForeground(Color.WHITE);
-		btnTimeToGetPill.setFont(new Font("Lucida Grande", Font.PLAIN, 21));
+		JButton btnTimeToInsertPill = new JButton("E' ORA DI CARICARE LE PILLOLE");
+		btnTimeToInsertPill.setBounds(66, 174, 630, 53);
+		add(btnTimeToInsertPill);
+		btnTimeToInsertPill.setBackground(Color.RED);
+		btnTimeToInsertPill.setForeground(Color.WHITE);
+		btnTimeToInsertPill.setFont(new Font("Lucida Grande", Font.PLAIN, 21));
 
 		
-				
-		JButton btnTakePill = new JButton("PRONTO");
-		btnTakePill.setBounds(260, 254, 252, 53);
-		add(btnTakePill);
-		btnTakePill.setBackground(Color.BLUE);
-		btnTakePill.setForeground(Color.WHITE);
-		btnTakePill.addMouseListener(new MouseAdapter() {
+		
+		
+		
+		JButton btnInsertPill = new JButton("PRONTO");
+		btnInsertPill.setBounds(260, 254, 252, 53);
+		add(btnInsertPill);
+		btnInsertPill.setBackground(Color.BLUE);
+		btnInsertPill.setForeground(Color.WHITE);
+		btnInsertPill.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				initUI2();
-				btnTakePill.setVisible(false);
-				btnTimeToGetPill.setVisible(false);
 				AlarmPanel.setVisible(false);
+				btnTimeToInsertPill.setVisible(false);
+				btnInsertPill.setVisible(false);
 			}
 		});
-		btnTakePill.setFont(new Font("Lucida Grande", Font.PLAIN, 21));
+		btnInsertPill.setFont(new Font("Lucida Grande", Font.PLAIN, 21));
 	}
 		
 		
 		///////////////////////////////* First panel of "take pill"(08.30 green)*/
-		public void initUI2() {
+		private void initUI2() {
 		
 		int distance = 160;
 		
-		JButton btnTimeToGetPill = new JButton("PRENDI 3 PILLOLE DAL CASSETTO 1");
-		btnTimeToGetPill.setBounds(99, 44, 573, 53);
-		add(btnTimeToGetPill);
-		btnTimeToGetPill.setBackground(Color.BLUE);
-		btnTimeToGetPill.setForeground(Color.WHITE);
-		btnTimeToGetPill.setFont(new Font("Lucida Grande", Font.PLAIN, 21));
+		JButton btnTimeToInsertPill = new JButton("INSERISCI 2 PILLOLE DI BALATON NEL CASSETTO 1");
+		btnTimeToInsertPill.setBounds(99, 44, 573, 53);
+		add(btnTimeToInsertPill);
+		btnTimeToInsertPill.setBackground(Color.BLUE);
+		btnTimeToInsertPill.setForeground(Color.WHITE);
+		btnTimeToInsertPill.setFont(new Font("Lucida Grande", Font.PLAIN, 21));
 		
 		
 		JButton btnPres1_1 = new JButton("08.30");
@@ -130,15 +170,18 @@ public class pnlTakePillClass extends JPanel {
 		btnGO.setBackground(Color.BLUE);
 		btnGO.setBounds(524, 289, 202, 78);
 		add(btnGO);
+		
 		btnGO.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Home.pnlTakePill.setVisible(false);
-				Home.pnlHome.setVisible(true);
+				i=i+1;
+				refresh();
 				}
 		});
 		}
 	
 		
 	}
+
+
 

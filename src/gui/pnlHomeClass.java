@@ -127,8 +127,8 @@ public class pnlHomeClass extends JPanel {
 	JButton btnInsertPill = new JButton("2");
 	btnInsertPill.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				AlarmTimeWindow window = new AlarmTimeWindow();
-				window.setVisible(true);
+				Home.pnlInsertPill.setVisible(true);
+				setVisible(false);
 			}
 		});
 	btnInsertPill.setSelectedIcon(null);

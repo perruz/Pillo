@@ -17,7 +17,7 @@ public class Home {
 	public static pnlPresClass pnlPres;
 	public static pnlHelpClass pnlHelp;
 	public static pnlTakePillClass pnlTakePill;
-
+	public static pnlInsertPillClass pnlInsertPill;
 	
 	
 	/**
@@ -67,11 +67,13 @@ public class Home {
 		pnlPres = new pnlPresClass(database);
 		pnlHelp = new pnlHelpClass();
 		pnlTakePill = new pnlTakePillClass();
+		pnlInsertPill = new pnlInsertPillClass();
 		
 	    frame.getContentPane().add(pnlHome);
 	    frame.getContentPane().add(pnlHelp);
 	    frame.getContentPane().add(pnlPres);
 	    frame.getContentPane().add(pnlTakePill);
+	    frame.getContentPane().add(pnlInsertPill);
 
 	    
 	    pnlHome.setVisible(true);
